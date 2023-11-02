@@ -1,0 +1,28 @@
+---
+title: "demo_file"
+author: "Laura Fung"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+source('ex01.R')
+```
+
+## Function Description
+This file demos how the 'transform' function works on the airquality dataset. The function converts the 'Temp' variable from Fahrenheit to Celsius to create new variable 'Temp_C'. The argument 'remove_na' is a boolean that removes observations with missing values.
+
+The following displays the different outputs of the function depending on whether the user choses to remove_na:
+
+```{r}
+mydata <- airquality
+
+transformed_data_na <- transform(mydata)
+transformed_data <- transform(mydata, remove_na = T)
+
+head(transformed_data_na)
+head(transformed_data)
+```
+
+
